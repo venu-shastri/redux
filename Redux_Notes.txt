@@ -1,0 +1,36 @@
+Redux = Immutable + Pure Function
+
+Immutable Libraries =DeepFreeze or ImmutableJS
+
+
+Rules to be followed 
+
+1.keep  the application state structure as flat and normalized as possible makes the code cleaner and simpler
+2.Redux does not allow external changes to the state. Using the state object received from getState()
+and changing values directly is prohibited
+3.Use HighOrder Function to Decorate Stores or Compose method Of redux Extending the behavior of store using store enhancers
+	applyMiddleware - built in store enhancer
+	Third Party Store Enhancer - https://github.com/markerikson/redux-ecosystem-links/blob/master/store.md
+
+
+Problem With Large Nested State
+• Reducer nesting and coupling
+• Access to multiple nested data entities
+
+
+When we use State as a Normalized State
+
+1.Let every reducer support special action called Update_Data
+2.Then Normalize Data - Normalizer - https://github.com/paularmstrong/normalizr
+3.Persist - Persist to localStorage of Browser - https://github.com/rt2zz/redux-persist
+
+What to Put in the State
+1.Should this data be persisted across page refresh?
+2.Should this data be persisted across route changes?
+3.Is this data used in multiple places in the UI?
+
+what Not to Put in the state
+1.Currently selected tab in a tab control on a page
+2.Hover visibility/invisibiity on a control
+3.Lightbox being open/closed
+4.Currently displayed errors
